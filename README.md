@@ -1,11 +1,13 @@
 # 四平台视频发布文案 Skill
 
-这是一个用于 Codex 的中文短视频发布文案 Skill。它会根据视频主题、脚本或素材信息，为以下四个平台分别生成可直接发布的标题、描述和标签：
+这是一个面向 AI Agent 的中文短视频发布文案 Skill。它会根据视频主题、脚本或素材信息，为以下四个平台分别生成可直接发布的标题、描述和标签：
 
 - 抖音
 - 小红书
 - 视频号
 - B 站
+
+核心规则写在 SKILL.md 中，适用于支持读取技能目录或 Markdown 技能说明的 Agent。agents/openai.yaml 是可选的展示配置，不影响其他 Agent 读取和使用 SKILL.md。
 
 ## 适用场景
 
@@ -13,16 +15,12 @@
 
 ## 使用方式
 
-将 skills/video-publish-copy-cn4/ 复制到 Codex 的 Skills 目录：
+将 skills/video-publish-copy-cn4/ 放入你所使用 Agent 的技能目录。不同 Agent 的目录规则可能不同；如果 Agent 支持按路径加载，也可以直接指定 SKILL.md。
 
-~~~bash
-cp -R skills/video-publish-copy-cn4 ~/.codex/skills/
-~~~
-
-然后在 Codex 中直接调用：
+在支持技能调用的 Agent 中提出类似请求：
 
 ~~~text
-使用 $video-publish-copy-cn4，根据这条视频的主题或脚本，生成抖音、小红书、视频号和 B 站可直接发布的标题、描述与标签。
+请使用 video-publish-copy-cn4，根据这条视频的主题或脚本，生成抖音、小红书、视频号和 B 站可直接发布的标题、描述与标签。
 ~~~
 
 也可以补充视频类型、目标受众、语气、时长、地点或必须保留的信息，让结果更贴合具体内容。
